@@ -1,16 +1,20 @@
-{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
-{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent
-%} {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" })
-}} {% endblock %} {% block content %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Translate text – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
+{{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" }) }}
+{% endblock %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/path/of/next/page" method="post">
+    <form class="form" action="/translate" method="post">
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %} {{
-      govukTextarea({ name: "moreDetail", id: "more-detail", label: { text: "Can
-      you provide more detail?", classes: "govuk-label--l", isPageHeading: true
-      }, hint: { text: "Do not include personal or financial information, like
-      your National Insurance number or credit card details" } }) }}
+      govukTextarea({ name: "textToTranslate", id: "text-to-translate", label: {
+      text: "Enter text to translate to English", classes: "govuk-label--l",
+      isPageHeading: true }, hint: { text: "Enter text in any language and we'll
+      translate it to English" } }) }}
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Translate
+      </button>
     </form>
   </div>
 </div>
