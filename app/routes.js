@@ -34,7 +34,7 @@ router.post("/translate", async function (req, res) {
     req.session.data.translation = message.content[0].text;
 
     // Redirect to results page
-    res.redirect("/translate-results");
+    res.render("translate");
   } catch (error) {
     console.error("Translation error:", error);
     res.send("Sorry, there was an error translating your text.");

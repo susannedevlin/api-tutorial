@@ -16,6 +16,18 @@ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
         Translate
       </button>
     </form>
+
+    </form>
+
+      {% if data.translation %}
+      <div class="govuk-inset-text" style="margin-top: 30px;">
+        <h2 class="govuk-heading-m">Translation:</h2>
+        <p class="govuk-body">{{ data.translation }}</p>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
   </div>
 </div>
 
