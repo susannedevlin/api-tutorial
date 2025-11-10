@@ -32,9 +32,10 @@ router.post("/translate", async function (req, res) {
 
     // Store the translation in session data
     req.session.data.translation = message.content[0].text;
+    req.session.data.textToTranslate = textToTranslate;
 
     // Redirect to results page
-    res.render("translate");
+    res.render("translate", { data: req.session.data });
   } catch (error) {
     console.error("Translation error:", error);
     res.send("Sorry, there was an error translating your text.");
