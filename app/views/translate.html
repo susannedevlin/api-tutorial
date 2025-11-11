@@ -7,7 +7,7 @@ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/translate" method="post">
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %} {{
-      govukTextarea({ name: "textToTranslate", id: "text-to-translate", label: {
+      govukTextarea({ name: "textToTranslate", id: "text-to-translate", value: data.textToTranslate, label: {
       text: "Enter text to translate to English", classes: "govuk-label--l",
       isPageHeading: true }, hint: { text: "Enter text in any language and we'll
       translate it to English" } }) }}
