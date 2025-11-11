@@ -7,27 +7,21 @@ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/translate" method="post">
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %} {{
-      govukTextarea({ name: "textToTranslate", id: "text-to-translate", value: data.textToTranslate, label: {
-      text: "Enter text to translate to English", classes: "govuk-label--l",
-      isPageHeading: true }, hint: { text: "Enter text in any language and we'll
-      translate it to English" } }) }}
+      govukTextarea({ name: "textToTranslate", id: "text-to-translate", value:
+      data.textToTranslate, label: { text: "Enter text to translate to English",
+      classes: "govuk-label--l", isPageHeading: true }, hint: { text: "Enter
+      text in any language and we'll translate it to English" } }) }}
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Translate
       </button>
     </form>
-
-    </form>
-
-      {% if data.translation %}
-      <div class="govuk-inset-text" style="margin-top: 30px;">
-        <h2 class="govuk-heading-m">Translation:</h2>
-        <p class="govuk-body">{{ data.translation }}</p>
-      </div>
-      {% endif %}
-
+    {% if data.translation %}
+    <div class="govuk-inset-text" style="margin-top: 30px">
+      <h2 class="govuk-heading-m">Translation:</h2>
+      <p class="govuk-body">{{ data.translation }}</p>
     </div>
-  </div>
+    {% endif %}
   </div>
 </div>
 
